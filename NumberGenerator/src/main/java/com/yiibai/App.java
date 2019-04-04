@@ -29,7 +29,8 @@ public class App
 			   String fromEmail = msg.getFromEmail();
 			   String fromName = msg.getFromName();
 			   String subject = msg.getSubject();
-			   String body = msg.getConvertedBodyHTML();
+			   String body = msg.getBodyText();
+			   
 			   
 			   System.out.println(fromEmail );
 			   System.out.println(fromName );
@@ -43,7 +44,7 @@ public class App
 			      }
 			   
 			   
-			   OutputStreamWriter write = new OutputStreamWriter(new FileOutputStream(file)); 
+			   OutputStreamWriter write = new OutputStreamWriter(new FileOutputStream(file),"UTF-8"); 
 			   BufferedWriter writer=new BufferedWriter(write); 
 			   writer.write(body);
 			   writer.close(); 
