@@ -31,6 +31,21 @@ public class App
 			   String subject = msg.getSubject();
 			   String body = msg.getBodyText();
 			   
+			   String[] lines = body.split("\r\n");
+			   
+			   System.out.print(lines.length);
+			   
+			   for (int i=0;i<lines.length;i++)
+			   {
+				   
+				   String line = lines[i];
+				   if (line.contains("期望月薪："))
+				   {
+					   System.out.println(line.replace("期望月薪：", "") );
+					   
+				   }
+
+			   }
 			   
 			   System.out.println(fromEmail );
 			   System.out.println(fromName );
